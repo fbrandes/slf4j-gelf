@@ -6,7 +6,7 @@
 
     <groupId>com.github.fbrandes</groupId>
     <artifactId>slf4j-gelf</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <modules>
         <module>slf4j-gelf-log4j-test</module>
         <module>slf4j-gelf-logback-test</module>
