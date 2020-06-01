@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Appenders>
+        <Console name="GelfConsole" target="SYSTEM_OUT">
+            <PatternLayout pattern="%msg%n" />
+        </Console>
+        <File name="GelfFile" fileName="slf4jgelf.log">
+            <PatternLayout pattern="%msg%n"/>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Root level="all">
+            <AppenderRef ref="GelfConsole" />
+            <AppenderRef ref="GelfFile"/>
+        </Root>
+    </Loggers>
+</Configuration>

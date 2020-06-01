@@ -1,0 +1,1 @@
+package com.fbrandes.slf4jgelf;
