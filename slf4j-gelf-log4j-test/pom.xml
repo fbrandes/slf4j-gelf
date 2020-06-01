@@ -6,7 +6,7 @@
 
     <parent>
         <artifactId>slf4j-gelf</artifactId>
-        <groupId>com.fbrandes</groupId>
+        <groupId>com.github.fbrandes</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
@@ -18,7 +18,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.fbrandes</groupId>
+            <groupId>com.github.fbrandes</groupId>
             <artifactId>slf4j-gelf-api</artifactId>
             <version>${project.version}</version>
         </dependency>

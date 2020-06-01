@@ -1,4 +1,4 @@
-package com.fbrandes.slf4jgelf;
+package com.github.fbrandes.slf4jgelf;
 
 import lombok.Getter;
 import lombok.Setter;

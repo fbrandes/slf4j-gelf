@@ -1,4 +1,4 @@
-package com.fbrandes.slf4jgelf;
+package com.github.fbrandes.slf4jgelf;
 
 import com.google.gson.annotations.SerializedName;
 import lombok.AllArgsConstructor;

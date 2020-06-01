@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.fbrandes.slf4jgelf;
+package com.github.fbrandes.slf4jgelf;
 
 import lombok.Getter;
 import lombok.Setter;

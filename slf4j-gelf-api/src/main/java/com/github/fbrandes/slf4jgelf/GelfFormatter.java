@@ -1,4 +1,4 @@
-package com.fbrandes.slf4jgelf;
+package com.github.fbrandes.slf4jgelf;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

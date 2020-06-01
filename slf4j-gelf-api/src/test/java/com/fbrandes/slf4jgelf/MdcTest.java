@@ -1,4 +1,4 @@
-package com.fbrandes.slf4jgelf;
+package com.github.fbrandes.slf4jgelf;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;

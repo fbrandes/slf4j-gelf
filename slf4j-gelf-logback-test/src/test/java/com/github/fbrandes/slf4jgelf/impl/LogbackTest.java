@@ -1,6 +1,6 @@
-package com.fbrandes.slf4jgelf.impl;
+package com.github.fbrandes.slf4jgelf.impl;
 
-import com.fbrandes.slf4jgelf.GelfLoggerFactory;
+import com.github.fbrandes.slf4jgelf.GelfLoggerFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
