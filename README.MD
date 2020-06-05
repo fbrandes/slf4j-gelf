@@ -1,4 +1,7 @@
 # slf4j-gelf 
+
+[![Build Status](https://travis-ci.org/fbrandes/slf4j-gelf.svg?branch=develop)](https://travis-ci.org/fbrandes/slf4j-gelf)
+
 [slf4j-gelf](https://github.com/fbrandes/slf4j-gelf) provides the capability of creating [GELF-formatted](https://docs.graylog.org/en/latest/pages/gelf.html) log messages via SLF4J. 
 
 ## Getting Started

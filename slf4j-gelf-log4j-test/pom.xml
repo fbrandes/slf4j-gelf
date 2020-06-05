@@ -6,39 +6,32 @@
 
     <parent>
         <artifactId>slf4j-gelf</artifactId>
-        <groupId>com.fbrandes</groupId>
-        <version>0.0.1-SNAPSHOT</version>
+        <groupId>com.github.fbrandes</groupId>
+        <version>0.0.2</version>
     </parent>
 
     <artifactId>slf4j-gelf-log4j-test</artifactId>
 
-    <properties>
-        <log4j.version>1.2.17</log4j.version>
-    </properties>
-
     <dependencies>
         <dependency>
-            <groupId>com.fbrandes</groupId>
+            <groupId>com.github.fbrandes</groupId>
             <artifactId>slf4j-gelf-api</artifactId>
             <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
             <version>${slf4j.api.version}</version>
-<!--            <scope>test</scope>-->
+            <scope>test</scope>
         </dependency>
         <!-- log4j -->
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
             <version>${log4j.version}</version>
+            <scope>test</scope>
         </dependency>
-
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>

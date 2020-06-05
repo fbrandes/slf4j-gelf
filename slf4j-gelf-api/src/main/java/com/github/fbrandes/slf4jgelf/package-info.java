@@ -1,0 +1,1 @@
+package com.github.fbrandes.slf4jgelf;
