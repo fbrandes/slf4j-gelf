@@ -7,7 +7,7 @@
     <parent>
         <artifactId>slf4j-gelf</artifactId>
         <groupId>com.github.fbrandes</groupId>
-        <version>0.0.2-SNAPSHOT</version>
+        <version>0.0.2</version>
     </parent>
 
     <artifactId>slf4j-gelf-log4j-test</artifactId>
