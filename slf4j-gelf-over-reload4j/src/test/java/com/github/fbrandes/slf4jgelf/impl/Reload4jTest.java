@@ -15,10 +15,10 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @DisplayName("Tests for facade usage with log4j")
-class Log4jTest {
-    private static final Logger LOGGER = new GelfLoggerFactory().getLogger(Log4jTest.class);
+class Reload4jTest {
+    private static final Logger LOGGER = new GelfLoggerFactory().getLogger(Reload4jTest.class);
 
-    private String logFileName = "slf4jgelf.log";
+    private final String logFileName = "slf4jgelf.log";
 
     @Test
     void test() throws IOException {

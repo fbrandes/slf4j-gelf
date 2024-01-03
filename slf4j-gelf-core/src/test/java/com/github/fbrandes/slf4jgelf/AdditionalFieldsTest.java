@@ -6,7 +6,7 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class AdditionalFieldsTest {
+class AdditionalFieldsTest {
     @Test
     void testAdd() {
         AdditionalFields additionalFields = new AdditionalFields();

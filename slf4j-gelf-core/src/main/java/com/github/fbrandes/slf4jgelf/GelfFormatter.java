@@ -2,7 +2,7 @@ package com.github.fbrandes.slf4jgelf;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import lombok.Singular;
+import org.slf4j.Logger;
 import org.slf4j.MDC;
 import org.slf4j.Marker;
 
@@ -14,12 +14,12 @@ import java.net.UnknownHostException;
 import java.util.Map;
 import java.util.Optional;
 
-class GelfFormatter {
+public class GelfFormatter {
     private Gson gson;
 
     private static final String HOSTNAME_LOCALHOST = "localhost";
 
-    GelfFormatter() {
+    public GelfFormatter() {
         init();
     }
 
@@ -30,7 +30,7 @@ class GelfFormatter {
         gson = builder.create();
     }
 
-    String toGelf(GelfLogger logger, String logMessage, Level level, Marker marker) {
+    public String toGelf(Logger logger, String logMessage, Level level, Marker marker) {
         GelfMessage gelfMessage = newMessage(logger, logMessage,level);
         if (marker != null) {
             gelfMessage.getAdditionalFields().add("marker", marker.getName());
@@ -38,12 +38,12 @@ class GelfFormatter {
         return gson.toJson(gelfMessage.getFields());
     }
 
-    String toGelf(GelfLogger logger, String logMessage, Level level) {
+    public String toGelf(Logger logger, String logMessage, Level level) {
         GelfMessage gelfMessage = newMessage(logger, logMessage, level);
         return gson.toJson(gelfMessage.getFields());
     }
 
-    private GelfMessage newMessage(GelfLogger logger, String logMessage, Level level) {
+    private GelfMessage newMessage(Logger logger, String logMessage, Level level) {
         String host = getHost();
         long timestamp = System.currentTimeMillis();
         AdditionalFields additionalFields = getAdditionalFields(logger);
@@ -53,26 +53,29 @@ class GelfFormatter {
                 .timestamp(timestamp).additionalFields(additionalFields).build();
     }
 
-    private AdditionalFields getAdditionalFields(GelfLogger logger) {
+    private AdditionalFields getAdditionalFields(Logger logger) {
         AdditionalFields additionalFields = new AdditionalFields();
-        if(logger.isIncludeMdc()) {
-            Map<String, String> mdc = MDC.getCopyOfContextMap();
-            if(mdc != null) {
-                additionalFields.addAll(mdc);
+
+        if(logger instanceof GelfLogger gelfLogger) {
+            if(gelfLogger.isIncludeMdc()) {
+                Map<String, String> mdc = MDC.getCopyOfContextMap();
+                if(mdc != null) {
+                    additionalFields.addAll(mdc);
+                }
             }
-        }
 
-        if(logger.isIncludeLoggerName()) {
-            additionalFields.add("logger_name", logger.getName());
-        }
+            if(gelfLogger.isIncludeLoggerName()) {
+                additionalFields.add("logger_name", logger.getName());
+            }
 
-        if(logger.isIncludeClassName()) {
-            StackTraceElement[] stackTraceElements = (new Exception()).getStackTrace();
-            additionalFields.add("class", stackTraceElements[3].getClassName());
-        }
+            if(gelfLogger.isIncludeClassName()) {
+                StackTraceElement[] stackTraceElements = (new Exception()).getStackTrace();
+                additionalFields.add("class", stackTraceElements[3].getClassName());
+            }
 
-        if(logger.isIncludeThreadName()) {
-            additionalFields.add("thread_name", Thread.currentThread().getName());
+            if(gelfLogger.isIncludeThreadName()) {
+                additionalFields.add("thread_name", Thread.currentThread().getName());
+            }
         }
 
         return additionalFields;

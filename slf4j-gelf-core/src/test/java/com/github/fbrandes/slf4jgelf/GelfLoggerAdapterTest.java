@@ -1,5 +1,7 @@
 package com.github.fbrandes.slf4jgelf;
 
+import com.github.fbrandes.slf4jgelf.simple.SimpleGelfLogger;
+import com.github.fbrandes.slf4jgelf.simple.SimpleGelfLoggerFactory;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Marker;
@@ -9,7 +11,7 @@ import org.slf4j.event.Level;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class GelfLoggerAdapterTest {
-    private static GelfLogger logger;
+    private static SimpleGelfLogger logger;
     private static final String DUMMY_LOG = "foo";
     private static final String ONE_ARG_FORMAT = "foo {}", TWO_ARG_FORMAT = "foo {} {}", THREE_ARG_FORMAT = "foo {} {} {}";
 
@@ -17,7 +19,7 @@ class GelfLoggerAdapterTest {
 
     @BeforeAll
     static void setup() {
-        logger = (GelfLogger) new GelfLoggerFactory().getLogger(GelfLoggerAdapterTest.class.getName());
+        logger = (SimpleGelfLogger) new SimpleGelfLoggerFactory().getLogger(GelfLoggerAdapterTest.class.getName());
     }
 
     @Test

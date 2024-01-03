@@ -7,11 +7,15 @@
         <File name="GelfFile" fileName="slf4jgelf.log">
             <PatternLayout pattern="%msg%n"/>
         </File>
+<!--        <Socket name="GelfSocket" host="localhost" port="9500">-->
+<!--            <JsonLayout properties="true"/>-->
+<!--        </Socket>-->
     </Appenders>
     <Loggers>
         <Root level="all">
             <AppenderRef ref="GelfConsole" />
             <AppenderRef ref="GelfFile"/>
+            <AppenderRef ref="GelfSocket"/>
         </Root>
     </Loggers>
 </Configuration>

@@ -1,7 +1,7 @@
 package com.github.fbrandes.slf4jgelf.impl;
 
-import com.github.fbrandes.slf4jgelf.SimpleGelfLogger;
-import com.github.fbrandes.slf4jgelf.SimpleGelfLoggerFactory;
+import com.github.fbrandes.slf4jgelf.simple.SimpleGelfLogger;
+import com.github.fbrandes.slf4jgelf.simple.SimpleGelfLoggerFactory;
 import org.junit.jupiter.api.Test;
 import org.slf4j.MDC;
 

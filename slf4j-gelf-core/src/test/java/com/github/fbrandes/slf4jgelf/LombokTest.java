@@ -1,7 +1,12 @@
-package com.github.fbrandes.slf4jgelf.impl;
+package com.github.fbrandes.slf4jgelf;
 
 import lombok.CustomLog;
+import org.junit.jupiter.api.Test;
 
-@CustomLog
-public class LombokTest {
+//@CustomLog
+class LombokTest {
+    @Test
+    void testWithoutAdditionalFields() {
+//        log.info("Hello");
+    }
 }

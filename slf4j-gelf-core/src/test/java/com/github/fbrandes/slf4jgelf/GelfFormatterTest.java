@@ -1,8 +1,8 @@
 package com.github.fbrandes.slf4jgelf;
 
+import com.github.fbrandes.slf4jgelf.simple.SimpleGelfLogger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;
 import org.slf4j.Marker;
 import org.slf4j.MarkerFactory;
@@ -10,10 +10,10 @@ import org.slf4j.MarkerFactory;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class GelfFormatterTest {
-    private GelfLogger loggerAdapter;
+    private SimpleGelfLogger loggerAdapter;
     @BeforeEach
     void setup() {
-        loggerAdapter = new GelfLogger();
+        loggerAdapter = new SimpleGelfLogger();
     }
 
     @Test
